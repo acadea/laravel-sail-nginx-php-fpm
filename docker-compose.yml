@@ -86,6 +86,19 @@ services:
         expose:
             - "9000"
 
+    laravel-horizon:
+        build:
+            context: ./docker/laravel-horizon
+        volumes:
+            - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}
+            - ./docker/laravel-horizon/supervisord.d:/etc/supervisord.d
+        depends_on:
+            - php-fpm
+        extra_hosts:
+            - "dockerhost:${DOCKER_HOST_IP}"
+        networks:
+            - sail
+
 
 #    meilisearch:
 #        image: 'getmeili/meilisearch:latest'
