@@ -1,3 +1,6 @@
 *.crt
 *.csr
 *.key
+.env
+vendor
+docker/logs/
