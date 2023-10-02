@@ -27,7 +27,8 @@ RUN apt-get update && \
         libgmp-dev \
         mariadb-client \
         unzip \
-        nodejs
+        nodejs \
+        npm
 
 # Install soap extention
 RUN docker-php-ext-install soap
